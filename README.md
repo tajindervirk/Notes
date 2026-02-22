@@ -91,23 +91,6 @@ The app will be running at `http://localhost:3000`
 ## 🏗️ Monolithic Deployment
 
 This project uses a **monolithic deployment** approach — the React frontend is built and served directly from the Express backend on the same port.
-
-To rebuild the frontend and update the `public` folder:
-```bash
-# In your frontend directory
-npm run build
-# Then copy the dist/ contents into the Backend/public/ folder
-```
-
-The backend serves the built frontend using:
-```javascript
-app.use(express.static(path.join(__dirname, '..', 'public')))
-
-app.use('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
-})
-```
-
 ---
 
 ## 🧠 What I Learned
@@ -117,9 +100,3 @@ app.use('*', (req, res) => {
 - **Monolithic deployment** — serving a React production build from an Express server on a single port
 - Connecting React frontend to a backend API using **Axios**
 - Managing UI state with a single `modalNote` state to handle both **create and edit** in one modal
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
